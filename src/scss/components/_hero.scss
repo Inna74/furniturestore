@@ -1,0 +1,224 @@
+.hero {
+  &__slide {
+    height: auto;
+
+    &1 {
+      background: url(../img/hero1920-1.webp) center center no-repeat;
+      background-size: cover;
+    }
+
+    &2 {
+      background: url(../img/hero1920-2.webp) center center no-repeat;
+      background-size: cover;
+    }
+
+    &3 {
+      background: url(../img/hero1920-3.webp) center center no-repeat;
+      background-size: cover;
+    }
+  }
+
+  &__text {
+    min-height: 400px;
+    max-width: 557px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  &__title {
+    margin-bottom: 49px;
+    font-size: 48px;
+    line-height: 1.354;
+    color: $grey;
+
+    &_white {
+      color: $white;
+    }
+
+    &-nowrap {
+      white-space: nowrap;
+    }
+  }
+
+  &__btn {
+    max-width: 296px;
+    padding: 20px 48px;
+
+    &-mobile {
+      display: none;
+    }
+  }
+}
+
+.hero__swiper>.swiper-pagination-bullets, .swiper-pagination-bullets.swipe-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+  bottom: 20px;
+}
+
+.hero__swiper.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  height: 14px;
+  width: 14px;
+  margin: 0 8px;
+  transition: opacity .2s ease-in-out;
+
+  &:hover {
+    opacity: .4;
+  }
+
+  &:focus {
+    opacity: .4;
+  }
+}
+
+.hero__swiper.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet-active, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet-active {
+  background: $black;
+
+  &:hover, &:focus {
+    opacity: var(--swiper-pagination-bullet-opacity, 1);
+  }
+}
+
+@media (max-width: 1200px) {
+  .hero {
+    &__slide {
+
+      &1 {
+        background: url(../img/hero1024-1.webp) center center no-repeat;
+        background-size: cover;
+      }
+
+      &2 {
+        background: url(../img/hero1024-2.webp) center center no-repeat;
+        background-size: cover;
+      }
+
+      &3 {
+        background: url(../img/hero1024-3.webp) center center no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .hero {
+    &__slide {
+
+      &1 {
+        background: url(../img/hero768-1.webp) center center no-repeat;
+        background-size: cover;
+      }
+
+      &2 {
+        background: url(../img/hero768-2.webp) center center no-repeat;
+        background-size: cover;
+      }
+
+      &3 {
+        background: url(../img/hero768-3.webp) center center no-repeat;
+        background-size: cover;
+      }
+    }
+
+    .hero__pagination {
+      transform: translateX(-1px);
+    }
+  }
+}
+
+@media (max-width: 580px) {
+  .hero {
+
+    &__swiper {
+      margin-bottom: 32px;
+    }
+
+    &__text {
+      max-width: 400px;
+      min-height: 350px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    &__title {
+      font-size: 34px;
+    }
+
+    .hero__pagination {
+      bottom: 15px;
+    }
+
+    .hero__swiper.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      margin: 0 4px;
+    }
+  }
+}
+
+@media (max-width: 460px) {
+  .hero {
+    &__slide {
+
+      &1 {
+        background: url(../img/hero320-1.webp) center center no-repeat;
+        background-size: cover;
+      }
+
+      &2 {
+        background: url(../img/hero320-2.webp) center center no-repeat;
+        background-size: cover;
+      }
+
+      &3 {
+        background: url(../img/hero320-3.webp) center center no-repeat;
+        background-size: cover;
+      }
+    }
+
+    &__text {
+      min-height: 260px;
+      padding: 30px 18px;
+    }
+
+    &__title {
+      font-size: 26px;
+    }
+
+    &__btn {
+      display: none;
+
+      &-mobile {
+        display: block;
+        max-width: 296px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px 35px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .hero {
+    &__text {
+      min-height: 210px;
+    }
+
+    &__title {
+      font-size: 20px;
+      line-height: 1.4;
+    }
+
+    .hero__pagination {
+      bottom: 7px;
+      transform: none;
+    }
+
+    .hero__swiper.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+      width: 6px;
+      height: 6px;
+      margin: 0 4px;
+    }
+  }
+}

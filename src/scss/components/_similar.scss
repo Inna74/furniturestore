@@ -1,0 +1,159 @@
+.similar {
+  margin-bottom: 70px;
+
+  &__container {
+    position: relative;
+  }
+
+  &__title {
+    margin-bottom: 25px;
+    font-size: 24px;
+    line-height: 130%;
+    letter-spacing: 0.15px;
+    transform: translate(1px,1px);
+  }
+
+  &__icon {
+    &_next {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__slide {
+    height: unset;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    gap: 17px;
+    padding: 57px 10px 30px 10px;
+  }
+
+  &__card {
+    &-text {
+      max-width: 236px;
+    }
+
+    &-title {
+      margin-bottom: 21px;
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 1.3;
+      color: $black;
+
+      &-nowrap {
+        white-space: nowrap;
+      }
+    }
+
+    &-price {
+      display: block;
+      margin-bottom: 24px;
+      font-size: 16px;
+      line-height: 1.3;
+      color: $grey-shade;
+    }
+
+    &-rate {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      display: flex;
+      align-items: center;
+      gap: 6.5px;
+      font-size: 16px;
+      line-height: 1.3;
+      color: $secondary;
+
+      &::before {
+        content: '';
+        width: 16px;
+        height: 15px;
+        background: url(../img/rating-star.svg) center center no-repeat;
+        background-size: contain;
+
+      }
+    }
+  }
+}
+
+@media (max-width: 580px) {
+  .similar {
+    &__container {
+      padding-bottom: 48px;
+    }
+
+    &__card {
+      justify-content: space-between;
+      gap: 25px;
+      padding: 100px 10px 30px 10px;
+    }
+
+    &__card {
+      &-title {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 460px) {
+  .similar {
+    &__card {
+      justify-content: end;
+      padding: 45px 16px 16px;
+    }
+
+    &__card {
+      &-title {
+        margin-bottom: 16px;
+        font-size: 16px;
+      }
+
+      &-price {
+        margin-bottom: 16px;
+      }
+
+      &-btn {
+        padding: 12px 25px;
+      }
+
+      &-rate {
+        top: 17px;
+        left: 16px;
+        gap: 6px;
+        font-size: 12px;
+
+        &::before {
+          width: 13px;
+          height: 12px;
+          transform: translateY(-1px);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .similar {
+    &__card {
+      gap: 8px;
+      padding: 36px 16px 16px;
+    }
+
+    &__card {
+      &-img {
+        &16 {
+          transform: translateY(-9px);
+        }
+      }
+
+      &-btn {
+        padding: 10px 23px;
+      }
+    }
+  }
+}

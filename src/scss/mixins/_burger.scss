@@ -1,0 +1,61 @@
+@mixin burger($width, $height, $color, $line-height) {
+  position: relative;
+  width: $width;
+  height: $height;
+  color: $color;
+
+  &__line2 {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: $line-height;
+    border-radius: 4px;
+    background-color: currentColor;
+    transform: translateY(-50%);
+    transition: background .2s ease-in-out;
+  }
+
+  &__line1,
+  &__line3 {
+    content: '';
+    position: absolute;
+    left: 0;
+    height: $line-height;
+    border-radius: 4px;
+    background-color: currentColor;
+    transition: background .2s ease-in-out;
+  }
+
+  &__line1 {
+    top: 0;
+    width: 100%;
+  }
+
+  &__line3 {
+    top: calc(100% - #{$line-height});
+    width: 100%;
+  }
+
+  &_active {
+    .burger__line2 {
+      transform: scale(0);
+      transition: transform .3s ease-in-out;
+    }
+
+    .burger__line1 {
+      top: 50%;
+      transform: rotate(45deg);
+      transition: transform .3s ease-in-out, top .3s ease-in-out;
+    }
+
+    .burger__line3 {
+      transform: rotate(-45deg);
+      top: 50%;
+      width: 100%;
+      transition: .3s ease-in-out, top .3s ease-in-out;
+    }
+  }
+}
+
+

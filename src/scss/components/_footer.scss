@@ -1,0 +1,292 @@
+.footer {
+  position: relative;
+  z-index: 4;
+  background: $md-grey;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    height: 30px;
+    background: $grey-light;
+  }
+
+  &__container {
+    grid-auto-rows: minmax(136px, max-content) minmax(30px, max-content);
+    row-gap: 0;
+    align-items: center;
+  }
+
+  &__left {
+    grid-column: calc($columns / 12 * 4) span;
+    transform: translateY(1px);
+  }
+
+  &__logo {
+    display: block;
+    margin-bottom: 28px;
+    transform: translateY(1px);
+  }
+
+
+
+  &__nav {
+    grid-column: calc($columns / 12 * 8) span;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(2px);
+  }
+
+
+
+  &__copyrights {
+    grid-column: $columns span;
+    text-align: center;
+  }
+
+  &__copyrights {
+    &-descr {
+      font-size: 14px;
+      line-height: 1.357;
+      color: $grey;
+      transform: translateY(-2px);
+    }
+
+    &-space {
+      margin-right: 6px;
+    }
+  }
+  .socials {
+    &-list {
+      display: flex;
+      gap: 20px;
+    }
+
+    &-link {
+      position: relative;
+      z-index: 4;
+      display: block;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -3px;
+        right: calc(100% + 3px);
+        bottom: 1px;
+        left: -3px;
+        z-index: -1;
+        background: $primary-light;
+        transition: right .2s ease-in-out;
+      }
+
+      &:hover {
+        .socials-icon {
+          fill: $primary;
+        }
+      }
+
+      &:focus {
+        &::before {
+          right: -3px;
+        }
+
+        .socials-icon {
+          fill: $white;
+        }
+
+        &:active {
+          &::before {
+            right: calc(100% + 3px);
+          }
+
+          .socials__icon {
+            fill: $primary-shade;
+          }
+        }
+      }
+
+      &:active {
+        .socials-icon {
+          fill: $primary-shade;
+        }
+      }
+    }
+
+    &-icon {
+      fill: $grey;
+      transition: fill .2s ease-in-out;
+    }
+  }
+  .nav {
+    &-container {
+      &2 {
+        transform: translateX(-18px);
+      }
+
+      &3 {
+        transform: translateX(-16px);
+      }
+    }
+
+    &-title {
+      margin-bottom: 5px;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 100%;
+      color: $black;
+    }
+
+    &-item {
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+
+    &-link {
+      font-size: 14px;
+      line-height: 1;
+      color: $grey;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  $columns: 9;
+
+  .footer {
+    &__left {
+      grid-column: calc($columns / 9 * 2) span;
+    }
+
+    &__nav {
+      grid-column: calc($columns / 9 * 7) span;
+      padding-right: 2px;
+    }
+
+    &__copyrights {
+      grid-column: $columns span;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  $columns: 6;
+
+  .footer {
+    &__container {
+      grid-auto-rows: minmax(80px, max-content) minmax(80px, max-content) minmax(30px, max-content);
+    }
+
+    &__left {
+      grid-column: $columns span;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__logo {
+      margin: 0;
+    }
+
+    &__nav {
+      grid-column: $columns span;
+      padding-bottom: 25px;
+      transform: translateY(1px);
+    }
+
+    &__copyrights {
+      grid-column: $columns span;
+    }
+  }
+}
+
+@media (max-width: 580px) {
+  $columns: 6;
+
+  .footer {
+    &__container {
+      padding-top: 29px;
+    }
+
+    &__left {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__logo {
+      margin-bottom: 29px;
+    }
+
+    &__nav {
+      display: grid;
+      grid-template-columns: repeat($columns, 1fr);
+      grid-auto-rows: minmax(84px, max-content);
+      column-gap: 16px;
+      row-gap: 24px;
+      max-width: 296px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 24px 0;
+    }
+
+
+  }
+  .nav {
+    &-container {
+      grid-column: calc($columns / 2) span;
+
+      &2 {
+        transform: none;
+      }
+
+      &3 {
+        transform: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 460px) {
+  .footer {
+    &__container {
+      row-gap: 0;
+      padding-top: 22px;
+    }
+
+    &__logo {
+      margin-bottom: 22px;
+      transform: translate(-1px, 1px);
+    }
+
+    &__nav {
+      row-gap: 26px;
+      padding: 23px 0 24px;
+    }
+
+
+
+    &__copyrights {
+      &-descr {
+        transform: translateY(-1px);
+      }
+
+      &-space {
+        margin-right: 7px;
+      }
+    }
+  }
+  .nav {
+    &-container {
+      &1 {
+        transform: translateX(-6px);
+      }
+
+      &3 {
+        transform: translateX(-7px);
+      }
+    }
+  }
+}

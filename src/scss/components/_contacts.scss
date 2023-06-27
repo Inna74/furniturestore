@@ -1,0 +1,208 @@
+.contacts {
+  &__container {
+    grid-auto-rows: minmax(432px, max-content);
+    padding-top: 70px;
+    padding-bottom: 70px;
+    background: url(../img/contacts-img1920.webp) right 20px center no-repeat;
+    background-size: 47.3% 383px;
+  }
+
+  &__title {
+    margin-bottom: 9px;
+  }
+
+  &__descr {
+    margin-bottom: 16px;
+    font-size: 14px;
+    line-height: 1.357;
+    color: $grey-shade;
+  }
+
+  &__form {
+    grid-column: calc($columns / 2) span;
+  }
+
+  &__input {
+    margin-bottom: 30px;
+  }
+
+  &__btn {
+    display: block;
+    margin-bottom: 12px;
+    padding: 17px 32px;
+    font-weight: 600;
+  }
+}
+
+.tippy-content {
+  padding: 5px;
+}
+
+.tippy-box[data-theme~='black'] {
+  top: -4px;
+  border-radius: 0;
+  font-size: 9px;
+  line-height: 1.55556;
+  text-align: center;
+  color: $white;
+  background: $black;
+}
+
+.tippy-box[data-theme~='black'][data-placement^='top'] > .tippy-arrow::before {
+  top: 14px;
+  left: -4px;
+  border-width: 11px 12px 0;
+  color: $black;
+}
+
+#myButton1 {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  transform: translateY(2px);
+  transition: background .2s ease-in-out;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 1px solid $secondary;
+    border-radius: 50%;
+  }
+
+  &:hover {
+    background: $secondary;
+
+    &::before {
+      border: 2px solid $secondary;
+    }
+
+    .btn__icon {
+      fill: $white;
+    }
+  }
+}
+
+.btn__icon {
+  fill: $secondary;
+  transition: fill .2s ease-in-out;
+}
+
+.js-validate-error-label {
+  position: absolute;
+  top: -18px;
+  left: 18px;
+  font-size: 12px;
+  line-height: 1.333;
+}
+
+@media (max-width: 1200px) {
+  $columns: 9;
+
+  .contacts {
+    &__container {
+      background: url(../img/contacts-img1024.webp) right 37px center no-repeat;
+      background-size: 50.2% 316px;
+    }
+
+    &__form {
+      grid-column: calc($columns / 9 * 4) span;
+    }
+
+    &__nowrap {
+      white-space: nowrap;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .contacts {
+    &__container {
+      background: url(../img/contacts-img768.webp) right 73.5px center no-repeat;
+      background-size: 24.2% 444px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .contacts {
+    &__container {
+      background-position: right 30px center;
+      background-size: 27% 444px;
+    }
+  }
+}
+
+@media (max-width: 660px) {
+  .contacts {
+    &__container {
+      background-position: right 20px center;
+      background-size: 29% 444px;
+    }
+  }
+}
+
+@media (max-width: 580px) {
+  $columns: 6;
+
+  .contacts {
+    &__container {
+      background: transparent;
+    }
+
+    &__form {
+      grid-column: $columns span;
+    }
+  }
+}
+
+@media (max-width: 460px) {
+  .contacts {
+    input[type="checkbox"] {
+      & ~ .checkbox-label {
+        &-name {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .contacts {
+    &__container {
+      padding-bottom: 69px;
+    }
+
+    &__title {
+      margin-bottom: 8px;
+    }
+
+    &__descr {
+      &-nowrap {
+        white-space: nowrap;
+      }
+    }
+
+    &__btn {
+      margin-bottom: 10.5px;
+    }
+
+    &__checkbox {
+      &__label {
+        padding-left: 20px;
+      }
+    }
+
+
+  }
+  .checkbox-label {
+    &__marker {
+      transform: translateY(1px);
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "gulp",
+  "version": "1.0.0",
+  "description": "сборка gulp",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "fastigor293015",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "babel-loader": "^8.2.3",
+    "browser-sync": "^2.27.7",
+    "cwebp": "^2.0.5",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-cli": "^2.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-fonter": "^0.3.0",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-html-bem-validator": "^1.0.5",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-notify": "^4.0.0",
+    "gulp-sass": "^5.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-svg-sprite": "^1.5.0",
+    "gulp-uglify-es": "^3.0.0",
+    "gulp-webp": "^4.0.1",
+    "node-normalize-scss": "^8.1.2",
+    "webp-converter": "^2.2.3"
+  },
+  "dependencies": {
+    "choices.js": "^9.0.1",
+    "gsap": "^3.8.0",
+    "sass": "^1.43.4",
+    "simplebar": "^5.3.6",
+    "swiper": "^7.3.1"
+  }
+}

@@ -1,0 +1,215 @@
+.rating {
+  &__container {
+    padding-bottom: 70px;
+    text-align: center;
+  }
+
+  &__title {
+    text-align: left;
+  }
+
+  &__list {
+    grid-auto-rows: minmax(420px, max-content);
+    margin-bottom: 32px;
+    text-align: left;
+  }
+
+  &__item {
+    grid-column: calc($columns / 4) span;
+
+    &:nth-child(n + 9) {
+      display: none;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    gap: 17px;
+    padding: 61px 10px 30px 10px;
+  }
+
+  &__card {
+    &-text {
+      max-width: 236px;
+    }
+
+    &-title {
+      margin-bottom: 21px;
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 1.3;
+      color: $black;
+
+      &-nowrap {
+        white-space: nowrap;
+      }
+    }
+
+    &-price {
+      display: block;
+      margin-bottom: 24px;
+      font-size: 16px;
+      line-height: 1.3;
+      color: $grey-shade;
+    }
+
+    &-rate {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      display: flex;
+      align-items: center;
+      gap: 6.5px;
+      font-size: 16px;
+      line-height: 1.3;
+      color: $secondary;
+
+      &::before {
+        content: '';
+        width: 16px;
+        height: 15px;
+        background: url(../img/rating-star.svg) center center no-repeat;
+        background-size: contain;
+
+      }
+    }
+  }
+
+  &__btn {
+    &-more {
+      max-width: 320px;
+      padding: 20px 35px;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .rating {
+    &__item {
+      &:nth-child(n + 7) {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .rating {
+    &__item {
+      &:nth-child(n + 7) {
+        display: none;
+      }
+    }
+
+    &__card {
+      gap: 16px;
+    }
+
+    &__card {
+      &-title {
+        margin-bottom: 24px;
+      }
+
+      &-price {
+        margin-bottom: 22px;
+      }
+    }
+  }
+}
+
+@media (max-width: 580px) {
+  .rating {
+    &__container {
+      padding-top: 70px;
+    }
+
+    &__card {
+      justify-content: space-between;
+      gap: 25px;
+      padding: 100px 10px 30px 10px;
+    }
+
+    &__card {
+      &-title {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 460px) {
+  .rating {
+    &__list {
+      grid-auto-rows: minmax(278px, max-content);
+    }
+
+    &__card {
+      padding: 65px 16px 16px;
+    }
+
+    &__card {
+      &-title {
+        margin-bottom: 16px;
+        font-size: 16px;
+      }
+
+      &-price {
+        margin-bottom: 16px;
+      }
+
+      &-btn {
+        padding: 12px 25px;
+      }
+
+      &-rate {
+        top: 17px;
+        left: 16px;
+        gap: 6px;
+        font-size: 12px;
+
+        &::before {
+          width: 13px;
+          height: 12px;
+          transform: translateY(-1px);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .rating {
+    &__card {
+      justify-content: end;
+      gap: 13px;
+      padding: 40px 16px 16px;
+
+      &1 {
+        gap: 21px;
+      }
+
+      &2, &3 {
+        gap: 17px;
+      }
+
+      &4 {
+        gap: 12px;
+      }
+    }
+
+    &__card {
+      &-btn {
+        padding: 10px 23px;
+      }
+    }
+
+    &__btn {
+      &-more {
+        padding: 20px 34.5px;
+      }
+    }
+  }
+}
